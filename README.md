@@ -85,4 +85,5 @@ Feel free to use any docu (.pdf or .txt), any wikipedia URL or put the text manu
 
 ## Watch the Demo
 
-[DEMO]()
+[DEMO](https://github.com/user-attachments/assets/684d6c82-303e-4558-92f4-6798be6227e2
+)
