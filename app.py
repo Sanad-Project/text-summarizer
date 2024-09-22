@@ -12,19 +12,13 @@ def main():
     # User chooses the input method
     input_method = st.radio(
         "**Choose the input method**", 
-        ("Enter text directly", "Upload a text file", "Upload a PDF file")
+        ("Enter text directly", "Upload a PDF file")
     )
 
 
     # If "Enter text directly"
     if input_method == "Enter text directly":
         st.session_state.text_input = st.text_area("Enter text directly here")
-
-    # If "Upload a text file"
-    elif input_method == "Upload a text file":
-        uploaded_text_file = st.file_uploader("Choose a text file", type="txt")
-        if uploaded_text_file is not None:
-            st.session_state.text_input = file_text(uploaded_text_file)
 
     # If "Upload a PDF file"
     elif input_method == "Upload a PDF file":
