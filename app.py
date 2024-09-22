@@ -12,7 +12,7 @@ def main():
     # User chooses the input method
     input_method = st.radio(
         "**Choose the input method**", 
-        ("Enter text directly", "Upload a text file", "Upload a PDF file", "Enter Wikipedia page URL")
+        ("Enter text directly", "Upload a text file", "Upload a PDF file")
     )
 
 
@@ -32,16 +32,6 @@ def main():
         if uploaded_pdf_file is not None:
             st.session_state.text_input = extract_text_from_pdf(uploaded_pdf_file)
 
-    # If "Enter Wikipedia page URL"
-    elif input_method == "Enter Wikipedia page URL":
-        wiki_url = st.text_input("Enter Wikipedia page URL")
-        if st.button("Fetch Wikipedia content", key="fetch_wiki_button"):
-            fetched_text = wiki_text(wiki_url)
-            if fetched_text:
-                st.session_state.text_input = fetched_text
-                st.success("Successfully fetched content from Wikipedia!")
-            else:
-                st.error("Failed to fetch content from the URL.")
 
     # Button to summarize
     if st.button('Summarize', key="summarize_button"):
